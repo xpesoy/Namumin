@@ -4,7 +4,7 @@ import Link from "next/link";
 
 // 서버에서 데이터 가져오기
 export async function getServerSideProps() {
-  const { data: posts, error } = await supabase
+  const { data: posts} = await supabase
     .from("posts")
     .select("id, title, created_at, author_id")
     .order("created_at", { ascending: false });
@@ -12,7 +12,7 @@ export async function getServerSideProps() {
   // 각 게시글에 대한 작성자의 이름을 추가
   const postsWithAuthors = await Promise.all(
     posts.map(async (post) => {
-      const { data: author, error } = await supabase
+      const { data: author } = await supabase
         .from("users")
         .select("username")
         .eq("id", post.author_id)
