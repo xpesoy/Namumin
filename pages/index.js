@@ -33,9 +33,11 @@ export default function Home({ posts }) {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* 상단 사이트 이름 */}
+      <meta http-equiv="Title" content="민재Inside" />
       <header className="bg-white shadow-md py-4">
+
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <h1 className="text-3xl font-bold text-blue-600">NVL PROJECT</h1>
+          <h1 className="text-3xl font-bold text-blue-600">민재Inside</h1>
           <Navbar />
         </div>
       </header>
